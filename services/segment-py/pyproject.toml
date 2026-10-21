@@ -1,0 +1,13 @@
+[project]
+name = "segment-py"
+version = "0.1.0"
+description = "Python MCP server for RFM customer segment scoring"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.0,<2",
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

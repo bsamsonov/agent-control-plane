@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": { "noEmit": true },
+  "include": ["apps/control-plane/src", "apps/control-plane/test", "packages/*/src", "packages/*/test", "scripts"]
+}

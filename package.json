@@ -1,0 +1,37 @@
+{
+  "name": "martech-agent-control-plane",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter './packages/*' build",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --pretty false",
+    "migrate": "tsx packages/db/src/migrate.ts",
+    "seed": "tsx packages/db/src/seed.ts",
+    "dev:cp": "tsx watch apps/control-plane/src/server.ts",
+    "dev:web": "pnpm --filter @macp/web dev",
+    "dev:stack": "tsx scripts/dev-stack.ts",
+    "mcp:crm": "tsx packages/mcp-fake-crm/src/server.ts",
+    "mcp:esp": "tsx packages/mcp-fake-esp/src/server.ts",
+    "mcp:analytics": "tsx packages/mcp-analytics/src/server.ts",
+    "demo": "tsx scripts/demo.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "@macp/db": "workspace:*",
+    "@macp/policy": "workspace:*",
+    "@macp/mcp-common": "workspace:*",
+    "@macp/mcp-fake-crm": "workspace:*",
+    "@macp/mcp-fake-esp": "workspace:*",
+    "@macp/mcp-analytics": "workspace:*",
+    "@macp/control-plane": "workspace:*"
+  }
+}
